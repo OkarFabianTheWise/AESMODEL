@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!-- Specifies the document type and version of HTML -->
+<html lang="en"> <!-- Specifies the language of the document -->
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets the viewport width and initial scale for mobile responsiveness -->
+    <title>Result</title> <!-- Sets the title of the webpage -->
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sets the font family for the entire document */
+            background-color: #f2f2f2; /* Sets the background color of the body */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+            text-align: center; /* Centers text horizontally */
+        }
+
+        h1 {
+            margin-top: 50px; /* Adds space above the heading */
+        }
+
+        p {
+            margin-top: 20px; /* Adds space above the paragraph */
+            font-size: 20px; /* Sets the font size of the paragraph */
+            word-wrap: break-word; /* Allows long words to be broken and wrap onto the next line */
+            white-space: pre-wrap; /* Preserves whitespace and breaks lines on newlines */
+        }
+
+        .button {
+            display: inline-block; /* Makes the button a block-level element */
+            margin-top: 20px; /* Adds space above the button */
+            padding: 10px 20px; /* Adds padding inside the button */
+            background-color: #4CAF50; /* Sets the background color of the button */
+            color: white; /* Sets the text color of the button */
+            text-decoration: none; /* Removes underline from the button */
+            border-radius: 5px; /* Rounds the corners of the button */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+            transition: background-color 0.3s; /* Adds a smooth transition effect to the background color */
+            margin-right: 10px; /* Adds space to the right of the button */
+        }
+
+        .button:hover {
+            background-color: #45a049; /* Sets the background color of the button on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Result</h1> <!-- Heading for the result -->
+    <p>{{ result }}</p> <!-- Placeholder for displaying the result -->
+
+    <a href="/" class="button">Back to Home</a> <!-- Link to navigate back to the home page -->
+    
+    <div class="button" id="copyResult">Copy Result</div> <!-- Element to copy the result text when clicked -->
+    
+    <script>
+        document.getElementById('copyResult').addEventListener('click', function() {
+            var resultText = document.querySelector('p').innerText; // Get the text content of the paragraph
+            var tempInput = document.createElement('textarea'); // Create a temporary textarea element
+            document.body.appendChild(tempInput); // Append the textarea to the body
+            tempInput.value = resultText; // Set the value of the textarea to the result text
+            tempInput.select(); // Select the content of the textarea
+            document.execCommand('copy'); // Execute the copy command
+            document.body.removeChild(tempInput); // Remove the temporary textarea element
+            alert('Result copied to clipboard!'); // Show an alert message
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!-- Specifies the document type and version of HTML -->
+<html lang="en"> <!-- Specifies the language of the document -->
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets the viewport width and initial scale for mobile responsiveness -->
+    <title>AES Encryption/Decryption By Agnes</title> <!-- Sets the title of the webpage -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sets the font family for the entire document */
+            background-color: #f2f2f2; /* Sets the background color of the body */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+        }
+
+        h1 {
+            text-align: center; /* Centers the heading */
+        }
+
+        form {
+            background-color: #ffffff; /* Sets the background color of the forms */
+            padding: 20px; /* Adds padding inside the forms */
+            border-radius: 10px; /* Rounds the corners of the forms */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect to the forms */
+            margin-bottom: 20px; /* Adds space between forms */
+        }
+
+        label {
+            display: block; /* Makes labels block-level elements */
+            margin-bottom: 5px; /* Adds space below labels */
+            font-weight: bold; /* Makes labels bold */
+        }
+
+        input[type="text"], button {
+            width: 100%; /* Makes input fields and buttons full-width */
+            padding: 10px; /* Adds padding inside input fields and buttons */
+            border: 1px solid #ccc; /* Sets border color and style */
+            border-radius: 5px; /* Rounds the corners of input fields and buttons */
+            box-sizing: border-box; /* Includes padding and border in the width/height of input fields and buttons */
+            margin-bottom: 10px; /* Adds space below input fields and buttons */
+        }
+
+        button {
+            background-color: #4CAF50; /* Sets the background color of the buttons */
+            color: white; /* Sets the text color of the buttons */
+            border: none; /* Removes default button border */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Sets the background color of the buttons on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>AES Encryption/Decryption By Agnes</h1> <!-- Heading for the form -->
+
+    <form action="/encrypt" method="post"> <!-- Form for encryption, with action set to "/encrypt" and method set to "post" -->
+        <label for="encrypt_data">Enter data to encrypt:</label> <!-- Label for the input field -->
+        <input type="text" id="encrypt_data" name="data"> <!-- Text input field for entering data to be encrypted -->
+        <button type="submit">Encrypt</button> <!-- Submit button to trigger encryption -->
+    </form>
+
+    <form action="/decrypt" method="post"> <!-- Form for decryption, with action set to "/decrypt" and method set to "post" -->
+        <label for="decrypt_data">Enter data to decrypt:</label> <!-- Label for the input field -->
+        <input type="text" id="decrypt_data" name="data"> <!-- Text input field for entering data to be decrypted -->
+        <button type="submit">Decrypt</button> <!-- Submit button to trigger decryption -->
+    </form>
+</body>
+</html>
