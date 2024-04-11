@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        .error-card {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #721c24;
+        }
+        p {
+            color: #721c24;
+        }
+        .return-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-card">
+        <h2>Error</h2>
+        <p>{{ error_message }}</p>
+        <button class="return-btn" onclick="window.location.href='/';">Return to Home</button>
+    </div>
+</body>
+</html>
