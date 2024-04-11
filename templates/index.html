@@ -50,10 +50,38 @@
         button:hover {
             background-color: #45a049; /* Sets the background color of the buttons on hover */
         }
+        
+        .error-card {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Added CSS for close button */
+        .close-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
     <h1>AES Encryption/Decryption By Agnes</h1> <!-- Heading for the form -->
+    
+    {% if error_message %}
+    <div class="error-card" id="error-card">
+        <span class="close-button" onclick="closeErrorMessage()">X</span> <!-- Close button -->
+        <p>{{ error_message }}</p>
+    </div>
+    {% endif %}
+
 
     <form action="/encrypt" method="post"> <!-- Form for encryption, with action set to "/encrypt" and method set to "post" -->
         <label for="encrypt_data">Enter data to encrypt:</label> <!-- Label for the input field -->
@@ -66,5 +94,22 @@
         <input type="text" id="decrypt_data" name="data"> <!-- Text input field for entering data to be decrypted -->
         <button type="submit">Decrypt</button> <!-- Submit button to trigger decryption -->
     </form>
+    <script>
+        // JavaScript function to close the error message
+        function closeErrorMessage() {
+            var errorCard = document.getElementById('error-card');
+            errorCard.style.display = 'none';
+        }
+
+        // JavaScript function to close the error message when clicking anywhere on the page
+        window.onclick = function(event) {
+            var errorCard = document.getElementById('error-card');
+            if (event.target == errorCard) {
+                errorCard.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
+
+
